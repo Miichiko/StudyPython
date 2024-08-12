@@ -17,6 +17,10 @@ while True:
     letra_digitada = input("digite uma letra. ")  
     
     tentativas += 1 
+    if len(letra_digitada) > 1:
+         print("Por favor, digite apenas uma letra!")
+         continue
+    
     if(letra_digitada in palavra_secreta):
         for elemento in palavra_secreta:
             if(elemento == letra_digitada):
