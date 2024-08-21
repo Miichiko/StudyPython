@@ -1,6 +1,7 @@
-import re
+def soma(a, b):
+    adicao = a + b
+    return adicao
 
-string = 'eu nasci em 1994 e a michiko em 2000'
 
-print(re.sub(r'[0-9]', 'a', string))
-# print(string)
+frase = "michiko ama doce"
+print(frase[8])

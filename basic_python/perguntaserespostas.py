@@ -32,7 +32,7 @@ def rodar_quiz(perguntas):
 
 # Verifica se a resposta está correta.
         if pergunta['Opções'][int(resposta_usuário) - 1] == pergunta['Resposta']:
-            print('Correto!\n')
+            # print('Correto!\n')
             pontuação += 1
         else:
             pass
