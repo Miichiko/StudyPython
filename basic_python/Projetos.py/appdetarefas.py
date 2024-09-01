@@ -14,7 +14,8 @@ label_header = tk.Label(window, text='Meu App de Tarefas',
                         font=font_header, bg='#F0F0F0', fg='#333').pack(pady=20)
 
 # criando a caixa de entrada
-frame = tk.Frame(window, bg='#F0F0F0').pack(pady=10)
+frame = tk.Frame(window, bg='#F0F0F0')
+frame.pack(pady=10)
 entry = tk.Entry(frame, font=('Garamond', 14),
                  relief=tk.FLAT, bg='white', fg='grey', width=30)
 entry.pack(side=tk.LEFT, padx=10)
@@ -30,6 +31,17 @@ frame_homework_list.pack(fill=tk.BOTH, expand=True, padx=10, pady=10)
 
 canvas = tk.Canvas(frame_homework_list, bg='white')
 canvas.pack(side=tk.LEFT, fill=tk.BOTH, expand=True, padx=10, pady=10)
+
+# fazendo o scroll agora
+scroll = ttk.Scrollbar(frame_homework_list,
+                       orient='vertical', command=canvas.yview)
+scroll.pack(side=tk.RIGHT, fill=tk.Y)
+
+canvas.configure(yscrollcommand=scroll.set)
+canvas_interior = tk.Frame(canvas, bg='white')
+canvas.create_window((0, 0), window=canvas_interior, anchor='nw')
+canvas_interior.bind('<Configure>', lambda e: canvas.configure(
+    scrollregion=canvas.bbox('all')))
 
 # vendo se mainha janela está funcionando
 window.mainloop()
