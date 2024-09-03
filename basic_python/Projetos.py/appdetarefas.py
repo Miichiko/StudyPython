@@ -1,6 +1,7 @@
 import tkinter as tk
 from tkinter import ttk, font, messagebox
 from tkinter import PhotoImage
+from funcoesdoapp import *
 
 #  criando a janela
 window = tk.Tk()
@@ -8,10 +9,10 @@ window.title('Meu App de Tarefas')
 window.configure(bg='#F0F0F0')
 window.geometry('500x600')
 
-# Função pra adicionar tarefa
 tarefas_adicionadas = []
 
-def adicionar_tarefa():
+
+def botao_adicionar_tarefa():
     tarefa = entry.get()
     if tarefa in tarefa != '':
         tarefas_adicionadas.append(tarefa)
@@ -23,19 +24,18 @@ def adicionar_tarefa():
     else:
         messagebox.showwarning(
             'Entrada inválida', 'Por favor, insira sua tarefa!')
-    
-    # edit_buttom = tk.Button(frame_homework_list, image=icon_edit,
-    #                         command=lambda f=frame_homework_list, l=label_tarefa: preparar_edicao(f, l), bg='white', relief=tk.FLAT)
-    # edit_buttom.pack(side=tk.RIGHT, padx=5)
-    # delete_buttom = tk.Button(frame_homework_list, image=icon_delete,
-    #                           command=lambda f=frame_homework_list: deletar_tarefa(f), bg='white', relief=tk.FLAT)
-    # delete_buttom.pack(side=tk.RIGHT, padx=5)
-    # frame_homework_list.pack(fill=tk.X, padx=5, pady=5)
+    edit_buttom = tk.Button(frame_homework_list, image=icon_edit,
+                            command=lambda f=frame_homework_list, l=label_tarefa: editar_tarefa(), bg='white', relief=tk.FLAT)
+    edit_buttom.pack(side=tk.RIGHT, padx=5)
+    delete_buttom = tk.Button(frame_homework_list, image=icon_delete,
+                              command=lambda f=frame_homework_list: deletar_tarefa(), bg='white', relief=tk.FLAT)
+    delete_buttom.pack(side=tk.RIGHT, padx=5)
+    frame_homework_list.pack(fill=tk.X, padx=5, pady=5)
 
 
-# icon_edit = PhotoImage('edit.png'.subsample(3, 3))
-# icon_delete = PhotoImage('detele.png'.subsample(3, 3))
-
+# corrigir isso depois
+icon_edit = PhotoImage('edit.png'.subsample(3, 3))
+icon_delete = PhotoImage('detele.png'.subsample(3, 3))
 
 # criando o Título do app
 font_header = font.Font(family='Garamond', size=24, weight='bold')
@@ -51,7 +51,7 @@ entry = tk.Entry(frame, font=('Garamond', 14),
 entry.pack(side=tk.LEFT, padx=10)
 
 # criando o botão de entrada
-entry_button = tk.Button(frame, text='Adicionar Tarefa', command=adicionar_tarefa,
+entry_button = tk.Button(frame, text='Adicionar Tarefa', command=botao_adicionar_tarefa,
                          bg='#4CAF50', fg='white', height=1, width=15, font=('Roboto', 11), relief=tk.FLAT)
 entry_button.pack(side=tk.LEFT, padx=10)
 
