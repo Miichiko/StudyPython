@@ -1,4 +1,30 @@
-# Dados de material e mercado
+
+# class Carrinho:
+#     def __init__(self):
+#         self.produto = []
+
+#     def inserir_produtos(self, *produtos):
+#         for produto in produtos:
+#             self.produto.append(produto)
+
+#     def listar_produto(self):
+#         for produto in self.produto:
+#             print(produto.nome, produto.preco)
+
+
+# class Produto:
+#     def __init__(self, nome, preco):
+#         self.nome = nome
+#         self.preco = preco
+
+
+# carrinho = Carrinho()
+# p1, p2 = Produto('farinha', 3), Produto('ovo', 1)
+# carrinho.inserir_produtos(p1, p2)
+# # carrinho.listar_produtos()
+
+
+# # Dados de material e mercado
 
 material = [
 
@@ -10,15 +36,17 @@ material = [
 ]
 
 mercado = [
+
     {'produto': 'farinha', 'preco':  3},  # preço de 1k de farinha
     {'produto': 'margarina', 'preco': 7},  # preço de 1k margarina
     {'produto': 'acucar', 'preco': 4},  # preço de 1k de açucar
-    {'produto': 'ovo', 'produto': 15},  # cartela com 30 ovos
+    {'produto': 'ovo', 'preco': 15},  # cartela com 30 ovos
 
 ]
 
-
 # Função para calcular o custo de um material
+
+
 def calcular_custo(material, mercado):
     custo_total = 0
 
