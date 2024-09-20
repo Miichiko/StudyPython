@@ -1,28 +1,4 @@
 
-# class Carrinho:
-#     def __init__(self):
-#         self.produto = []
-
-#     def inserir_produtos(self, *produtos):
-#         for produto in produtos:
-#             self.produto.append(produto)
-
-#     def listar_produto(self):
-#         for produto in self.produto:
-#             print(produto.nome, produto.preco)
-
-
-# class Produto:
-#     def __init__(self, nome, preco):
-#         self.nome = nome
-#         self.preco = preco
-
-
-# carrinho = Carrinho()
-# p1, p2 = Produto('farinha', 3), Produto('ovo', 1)
-# carrinho.inserir_produtos(p1, p2)
-# # carrinho.listar_produtos()
-
 
 # # Dados de material e mercado
 
